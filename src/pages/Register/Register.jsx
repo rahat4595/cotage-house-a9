@@ -3,14 +3,17 @@ import { AuthContext } from "../../providers/Context";
 import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import { IoEye, IoEyeOff } from "react-icons/io5";
 
 
 const Register = () => {
 
-    const { createUser,updateUserProfile, signInWithGoogle, githubLogin } = useContext(AuthContext);
+    const { createUser, updateUserProfile, signInWithGoogle, githubLogin } = useContext(AuthContext);
 
     const [registerError, setRegisterError] = useState('');
     const [registerSuccess, setRegisterSuccess] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     const navigate = useNavigate();
 
@@ -24,7 +27,7 @@ const Register = () => {
         const photoURL = form.get('photoURL');
         const termsChecked = form.get('terms');
         console.log(form.get('email'))
-        console.log(name, photoURL, email, password,termsChecked);
+        console.log(name, photoURL, email, password, termsChecked);
 
         setRegisterError();
         setRegisterSuccess();
@@ -37,7 +40,7 @@ const Register = () => {
             setRegisterError('Password should be one Uppercase and Lowercase letter');
             return;
         }
-        else if (!termsChecked){
+        else if (!termsChecked) {
             setRegisterError('please accept our Terms and Conditons');
             return
         }
@@ -49,12 +52,12 @@ const Register = () => {
                 console.log(result.user);
                 setRegisterSuccess('User Created Successfully');
                 updateUserProfile(name, photoURL)
-                .then( () => {
-                    // Reset form field after Registration
-                    e.target.reset();
-                    // Go to home page after Registration
-                        navigate('/'); 
-                     })
+                    .then(() => {
+                        // Reset form field after Registration
+                        e.target.reset();
+                        // Go to home page after Registration
+                        navigate('/');
+                    })
             })
             .catch(error => {
                 console.error(error);
@@ -111,18 +114,26 @@ const Register = () => {
                     <FaGithub onClick={handleGithubLogin} size={30} className="flex -mb-1 justify-center items-center w-full" /></button>
             </div>
 
-            <div className="my-8 flex text-center border-b-2 border-dashed border-y-2 border-slate-300">
+            <div className="my-8 flex md:w-3/4 mx-auto  text-center border-b-2 border-dashed border-y-2 border-slate-300">
                 <p className="mx-auto text-2xl font-semibold text-black"><i>Or</i></p>
             </div>
             <form onSubmit={handleRegister} className="text-center">
 
-                <input className="text-lg border-neutral-300 border font-medium outline-pink-500 md:w-3/4 px-4 mb-6 py-2 rounded placeholder-pink-600" type="text" name="name" placeholder="Your Name" required />
+                <input className="text-lg border-neutral-300 border font-medium outline-black-500 md:w-3/4 px-4 mb-6 py-2 rounded placeholder-black-600" type="text" name="name" placeholder="Your Name" required />
 
-                <input className="text-lg border-neutral-300 border font-medium outline-pink-500 md:w-3/4 px-4 mb-6 py-2 rounded placeholder-pink-600" type="email" name="email" placeholder="Your Email Address" required />
+                <input className="text-lg border-neutral-300 border font-medium outline-black-500 md:w-3/4 px-4 mb-6 py-2 rounded placeholder-black-600" type="email" name="email" placeholder="Your Email Address" required />
 
-                <input className="text-lg border-neutral-300 border font-medium outline-pink-500 md:w-3/4 px-4 mb-6 py-2 rounded placeholder-pink-600" type="text" name="photoURL" placeholder="Photo URL" />
+                <input className="text-lg border-neutral-300 border font-medium outline-black-500 md:w-3/4 px-4 mb-6 py-2 rounded placeholder-black-600" type="text" name="photoURL" placeholder="Photo URL" />
 
-                <input className="text-lg border-neutral-300 border  font-medium outline-pink-500 md:w-3/4 px-4 py-2 mb-6 rounded placeholder-pink-600" type="password" name="password" placeholder="Password" required />
+                <div className='relative mb-6 md:w-3/4 mx-auto'>
+                    <input className="text-lg border-neutral-300 border  font-medium outline-black-500 w-full px-4 py-2 rounded placeholder-black-500" type={showPassword ? "text" : "password"} name="password" placeholder="Password" required />
+
+                    <span className='absolute top-3 right-10' onClick={() => setShowPassword(!showPassword)}>
+                        {
+                            showPassword ? <IoEyeOff className='text-2xl'></IoEyeOff > : <IoEye className='text-2xl'></IoEye>
+                        }
+                    </span>
+                </div>
 
                 <div className="md:flex md:space-x-0 space-x-3 items-center gap-3 justify-center">
                     <input className='md:h-4 md:w-4' type="checkbox" name="terms" id="terms" />
