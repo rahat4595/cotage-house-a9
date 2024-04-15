@@ -7,7 +7,7 @@ import { FaGithub } from "react-icons/fa";
 
 const Register = () => {
 
-    const { createUser, signInWithGoogle, githubLogin } = useContext(AuthContext);
+    const { createUser,updateUserProfile, signInWithGoogle, githubLogin } = useContext(AuthContext);
 
     const [registerError, setRegisterError] = useState('');
     const [registerSuccess, setRegisterSuccess] = useState('');
@@ -48,7 +48,13 @@ const Register = () => {
             .then(result => {
                 console.log(result.user);
                 setRegisterSuccess('User Created Successfully');
-                navigate('/')
+                updateUserProfile(name, photoURL)
+                .then( () => {
+                    // Reset form field after Registration
+                    e.target.reset();
+                    // Go to home page after Registration
+                        navigate('/'); 
+                     })
             })
             .catch(error => {
                 console.error(error);

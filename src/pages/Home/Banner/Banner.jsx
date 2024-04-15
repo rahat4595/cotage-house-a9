@@ -14,12 +14,14 @@ const Banner = () => {
         spaceBetween={50}
         slidesPerView={1}
         navigation
+        speed={1200}
+        loop={true}
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
       >
-        <SwiperSlide><img src={slider1} alt="" style={{width: "100%", height: "100vh"}} /></SwiperSlide>
-        <SwiperSlide><img src={slider2} alt="" style={{width: "100%", height: "100vh"}} /></SwiperSlide>
-        <SwiperSlide><img src={slider3} alt="" style={{width: "100%", height: "100vh"}} /></SwiperSlide>
+        <SwiperSlide><img src={slider1} alt="" style={{width: "100%", height: "80vh"}} /></SwiperSlide>
+        <SwiperSlide><img src={slider2} alt="" style={{width: "100%", height: "80vh"}} /></SwiperSlide>
+        <SwiperSlide><img src={slider3} alt="" style={{width: "100%", height: "80vh"}} /></SwiperSlide>
       </Swiper>
     );
 };

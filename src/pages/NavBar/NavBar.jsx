@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/Context";
 
 
+
 const NavBar = () => {
 
     const { user, logOut } = useContext(AuthContext);
@@ -18,11 +19,9 @@ const NavBar = () => {
 
         <NavLink className={({ isActive }) => isActive ? 'text-lg font-semibold text-[#23BE0A] border px-1 rounded-md border-[#23BE0A]' : 'text-lg font-semibold'} to="/">Home</NavLink>
 
-        <NavLink className={({ isActive }) => isActive ? 'text-lg font-semibold text-[#23BE0A] border px-1 rounded-md border-[#23BE0A]' : 'text-lg font-semibold'} to="/listed">Update Profile</NavLink>
+        <NavLink className={({ isActive }) => isActive ? 'text-lg font-semibold text-[#23BE0A] border px-1 rounded-md border-[#23BE0A]' : 'text-lg font-semibold'} to="/update">Update Profile</NavLink>
 
-        <NavLink className={({ isActive }) => isActive ? 'text-lg font-semibold text-[#23BE0A] border px-1 rounded-md border-[#23BE0A]' : 'text-lg font-semibold'} to="/pages">User Details</NavLink>
-
-        <NavLink className={({ isActive }) => isActive ? 'text-lg font-semibold text-[#23BE0A] border px-1 rounded-md border-[#23BE0A]' : 'text-lg font-semibold'} to="/seller">Best Seller</NavLink>
+        <NavLink className={({ isActive }) => isActive ? 'text-lg font-semibold text-[#23BE0A] border px-1 rounded-md border-[#23BE0A]' : 'text-lg font-semibold'} to="/seller">Best Services</NavLink>
 
 
     </>
@@ -69,7 +68,7 @@ const NavBar = () => {
 
                     }
 
-
+                    
                 </div>
             </div>
         </div>
