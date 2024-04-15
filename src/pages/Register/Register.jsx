@@ -1,10 +1,15 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/Context";
+import { useNavigate } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 
 
 const Register = () => {
 
-    const {createUser} = useContext(AuthContext)
+    const { createUser, signInWithGoogle , githubLogin } = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     const handleRegister = e => {
         e.preventDefault();
@@ -15,25 +20,71 @@ const Register = () => {
         const password = form.get('password');
         const photoURL = form.get('photoURL');
         console.log(form.get('email'))
-        console.log(name, photoURL,email, password);
+        console.log(name, photoURL, email, password);
 
 
-         // Create user
-         createUser(email, password)
-         .then(result => {
-             console.log(result.user)
-         })
-         .catch(error => {
-             console.error(error)
-         })
-       
+        // Create user
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user);
+                navigate('/')
+            })
+            .catch(error => {
+                console.error(error)
+            })
+
+    }
+
+    // google login
+
+    const handleGoogleLogIn = () =>{
+        signInWithGoogle()
+        .then(result => {
+            console.log(result.user)
+        })
+        .catch(error => {
+            console.error(error)
+        })
+    }
+
+    // github login
+    const handleGithubLogin = () => {
+        githubLogin()
+        .then(result =>{
+          console.log(result.user);
+          //  Go to Home page after github Login
+          navigate(location?.state ? location.state : '/' );
+      })
+      .catch(error => {
+          console.error(error);
+      })
     }
 
 
-       
+
 
     return (
         <div className="max-w-7xl mx-auto">
+
+            <div className="md:pt-10 pt-8 pb-8 md:pb-10">
+                <img className="mx-auto md:w-[400px] w-[500px] rounded-3xl" alt="" />
+            </div>
+
+            <div className='text-center'>
+                <p className="mb-8 text-center text-2xl md:text-3xl font-semibold">Please Register an account!</p>
+
+                <label className="mr-1 ml-auto text-2xl text-orange-600 lg:text-2xl font-bold lg:font-semibold">Register with</label>
+
+                <button className="lg:mx-4 mx-2 h-8 w-8 rounded-full">
+                    <FcGoogle  onClick={handleGoogleLogIn} size={30} className="flex -mb-1 justify-center items-center w-full" /></button>
+
+                <button className="lg:mx-4 mx-2 h-8 w-8 rounded-full">
+                    <FaGithub  onClick={handleGithubLogin} size={30} className="flex -mb-1 justify-center items-center w-full" /></button>
+            </div>
+
+            <div className="my-8 flex text-center border-b-2 border-dashed border-y-2 border-slate-300">
+                <p className="mx-auto text-2xl font-semibold text-black"><i>Or</i></p>
+            </div>
             <form onSubmit={handleRegister} className="text-center">
 
                 <input className="text-lg border-neutral-300 border font-medium outline-pink-500 md:w-3/4 px-4 mb-6 py-2 rounded placeholder-pink-600" type="text" name="name" placeholder="Your Name" required />
@@ -57,10 +108,10 @@ const Register = () => {
             </div>
 
 
-            
+
         </div>
 
-        
+
     );
 };
 

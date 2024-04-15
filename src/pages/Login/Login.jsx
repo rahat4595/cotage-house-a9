@@ -1,11 +1,16 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/Context";
+import { useNavigate } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 
 
 const Login = () => {
 
 
-    const {signIn} = useContext(AuthContext)
+    const { signIn , signInWithGoogle , githubLogin} = useContext(AuthContext)
+
+    const navigate = useNavigate()
 
     const handleLogin = e => {
         e.preventDefault();
@@ -15,17 +20,55 @@ const Login = () => {
         const password = form.get('password')
         console.log(email, password);
         signIn(email, password)
+            .then(result => {
+                console.log(result.user);
+
+                navigate('/')
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+
+    const handleGoogleLogin = () => {
+        signInWithGoogle()
         .then(result =>{
-            console.log(result.user)
-        })
-        .catch(error => {
-            console.error(error)
-        })
+          console.log(result.user);
+       // After Google login go to clicked state otherwish go to home page
+       navigate(location?.state ? location.state : '/' );
+      })
+      .catch(error => {
+          console.error(error);
+      })
+      }
+
+    //   github login
+      const handleGithubLogin = () => {
+        githubLogin()
+        .then(result =>{
+          console.log(result.user);
+          //  Go to Home page after github Login
+          navigate(location?.state ? location.state : '/' );
+      })
+      .catch(error => {
+          console.error(error);
+      })
     }
 
 
     return (
         <div className="max-w-7xl mx-auto">
+
+            <div>
+                <i><h1 className="lg:text-3xl text-2xl text-red-800 font-bold md:mb-4 mb-2 lg:mb-6">Please Login Now!</h1></i>
+                <label className="mr-1 text-xl lg:text-2xl font-bold lg:font-semibold">Sign in with</label>
+
+                <button className="lg:mx-4 mx-2 h-8 w-8 rounded-full">
+                    <FcGoogle onClick={handleGoogleLogin} size={30} className="flex -mb-1 justify-center items-center w-full" /></button>
+
+                <button className="lg:mx-4 mx-2 h-8 w-8 rounded-full">
+                    <FaGithub  onClick={handleGithubLogin} size={30} className="flex -mb-1 justify-center items-center w-full" /></button>
+            </div>
             <form onSubmit={handleLogin}>
                 <input className="text-lg font-semibold w-full px-4 py-2 border border-gray-400 rounded" type="email" name="email" placeholder="Email Address" required />
 
@@ -44,8 +87,8 @@ const Login = () => {
                 </div>
             </form>
             <div className="mt-4 font-semibold lg:text-xl text-base text-slate-800 text-center"><i>Don&apos;t have an account?</i>{" "}
-    <a className="text-blue-600 hover:underline hover:underline-offset-4" href="/register">Register Here</a>
-        </div>
+                <a className="text-blue-600 hover:underline hover:underline-offset-4" href="/register">Register Here</a>
+            </div>
         </div>
     );
 };
