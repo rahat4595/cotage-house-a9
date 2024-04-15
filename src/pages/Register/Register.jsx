@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/Context";
 import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
@@ -7,7 +7,10 @@ import { FaGithub } from "react-icons/fa";
 
 const Register = () => {
 
-    const { createUser, signInWithGoogle , githubLogin } = useContext(AuthContext);
+    const { createUser, signInWithGoogle, githubLogin } = useContext(AuthContext);
+
+    const [registerError, setRegisterError] = useState('');
+    const [registerSuccess, setRegisterSuccess] = useState('');
 
     const navigate = useNavigate();
 
@@ -19,46 +22,65 @@ const Register = () => {
         const email = form.get('email');
         const password = form.get('password');
         const photoURL = form.get('photoURL');
+        const termsChecked = form.get('terms');
         console.log(form.get('email'))
-        console.log(name, photoURL, email, password);
+        console.log(name, photoURL, email, password,termsChecked);
+
+        setRegisterError();
+        setRegisterSuccess();
+
+        if (password.length < 6) {
+            setRegisterError('! Password should be 6 characters or long !');
+            return;
+        }
+        else if (!/(?=.*[a-z])(?=.*[A-Z]).+/.test(password)) {
+            setRegisterError('Password should be one Uppercase and Lowercase letter');
+            return;
+        }
+        else if (!termsChecked){
+            setRegisterError('please accept our Terms and Conditons');
+            return
+        }
 
 
         // Create user
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
+                setRegisterSuccess('User Created Successfully');
                 navigate('/')
             })
             .catch(error => {
-                console.error(error)
+                console.error(error);
+                setRegisterError(error.message);
             })
 
     }
 
     // google login
 
-    const handleGoogleLogIn = () =>{
+    const handleGoogleLogIn = () => {
         signInWithGoogle()
-        .then(result => {
-            console.log(result.user);
-            navigate(location?.state ? location.state : '/' );
-        })
-        .catch(error => {
-            console.error(error)
-        })
+            .then(result => {
+                console.log(result.user);
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                console.error(error)
+            })
     }
 
     // github login
     const handleGithubLogin = () => {
         githubLogin()
-        .then(result =>{
-          console.log(result.user);
-          //  Go to Home page after github Login
-          navigate(location?.state ? location.state : '/' );
-      })
-      .catch(error => {
-          console.error(error);
-      })
+            .then(result => {
+                console.log(result.user);
+                //  Go to Home page after github Login
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                console.error(error);
+            })
     }
 
 
@@ -77,10 +99,10 @@ const Register = () => {
                 <label className="mr-1 ml-auto text-2xl text-orange-600 lg:text-2xl font-bold lg:font-semibold">Register with</label>
 
                 <button className="lg:mx-4 mx-2 h-8 w-8 rounded-full">
-                    <FcGoogle  onClick={handleGoogleLogIn} size={30} className="flex -mb-1 justify-center items-center w-full" /></button>
+                    <FcGoogle onClick={handleGoogleLogIn} size={30} className="flex -mb-1 justify-center items-center w-full" /></button>
 
                 <button className="lg:mx-4 mx-2 h-8 w-8 rounded-full">
-                    <FaGithub  onClick={handleGithubLogin} size={30} className="flex -mb-1 justify-center items-center w-full" /></button>
+                    <FaGithub onClick={handleGithubLogin} size={30} className="flex -mb-1 justify-center items-center w-full" /></button>
             </div>
 
             <div className="my-8 flex text-center border-b-2 border-dashed border-y-2 border-slate-300">
@@ -103,6 +125,14 @@ const Register = () => {
                 </div>
                 <input className='btn max-w-7xl md:text-lg text-base font-medium mt-5 mb-4 hover:bg-indigo-700 bg-indigo-600 text-white' type="submit" value="Create an Account" />
             </form>
+
+            {
+                registerError && <b><p className='text-xl font-bold text-center pb-4 text-black-600'>{registerError}</p></b>
+            }
+
+            {
+                registerSuccess && <i><p className='text-xl font-semibold text-center pb-4 text-green-600'>{registerSuccess}</p></i>
+            }
 
             <div className="pb-8 font-semibold md:text-xl text-base text-slate-800 text-center"><i>Already have an account?</i>{" "}
                 <a className="text-blue-600 hover:underline hover:underline-offset-4" href="/login">Login Here</a>

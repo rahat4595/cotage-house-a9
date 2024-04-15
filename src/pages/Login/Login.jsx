@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/Context";
 import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
@@ -8,7 +8,10 @@ import { FaGithub } from "react-icons/fa";
 const Login = () => {
 
 
-    const { signIn , signInWithGoogle , githubLogin} = useContext(AuthContext)
+    const { signIn, signInWithGoogle, githubLogin } = useContext(AuthContext);
+
+    const [loginSuccess, setLoginSuccess] = useState('');
+    const [loginError, setLoginError] = useState('');
 
     const navigate = useNavigate()
 
@@ -19,40 +22,51 @@ const Login = () => {
         const email = form.get('email')
         const password = form.get('password')
         console.log(email, password);
+
+        setLoginSuccess('')
+        setLoginError('')
+
+        // login existing uset
         signIn(email, password)
             .then(result => {
-                console.log(result.user);
+                console.log(result.user)
+                setLoginSuccess('User logged in Successfully');
+                // Reset form field after login
+                e.target.reset();
 
-                navigate('/')
+                // After login go to clicked state otherwish go to home page
+                navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
-                console.error(error)
+                console.error(error);
+                setLoginError('Please check your Email or Password again :(')
             })
+
     }
 
     const handleGoogleLogin = () => {
         signInWithGoogle()
-        .then(result =>{
-          console.log(result.user);
-       // After Google login go to clicked state otherwish go to home page
-       navigate(location?.state ? location.state : '/' );
-      })
-      .catch(error => {
-          console.error(error);
-      })
-      }
+            .then(result => {
+                console.log(result.user);
+                // After Google login go to clicked state otherwish go to home page
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }
 
     //   github login
-      const handleGithubLogin = () => {
+    const handleGithubLogin = () => {
         githubLogin()
-        .then(result =>{
-          console.log(result.user);
-          //  Go to Home page after github Login
-          navigate(location?.state ? location.state : '/' );
-      })
-      .catch(error => {
-          console.error(error);
-      })
+            .then(result => {
+                console.log(result.user);
+                //  Go to Home page after github Login
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                console.error(error);
+            })
     }
 
 
@@ -67,7 +81,7 @@ const Login = () => {
                     <FcGoogle onClick={handleGoogleLogin} size={30} className="flex -mb-1 justify-center items-center w-full" /></button>
 
                 <button className="lg:mx-4 mx-2 h-8 w-8 rounded-full">
-                    <FaGithub  onClick={handleGithubLogin} size={30} className="flex -mb-1 justify-center items-center w-full" /></button>
+                    <FaGithub onClick={handleGithubLogin} size={30} className="flex -mb-1 justify-center items-center w-full" /></button>
             </div>
             <form onSubmit={handleLogin}>
                 <input className="text-lg font-semibold w-full px-4 py-2 border border-gray-400 rounded" type="email" name="email" placeholder="Email Address" required />
@@ -86,6 +100,13 @@ const Login = () => {
  text-white rounded text-lg font-semibold" type="submit" name="submit" value="Login to your account" />
                 </div>
             </form>
+
+            {
+                loginSuccess && <p className='text-xl font-bold text-center pt-6 pb-2 text-green-600'>{loginSuccess}</p>
+            }
+            {
+                loginError && <p className='text-xl font-bold text-center pt-6 pb-2 text-red-600'>{loginError}</p>
+            }
             <div className="mt-4 font-semibold lg:text-xl text-base text-slate-800 text-center"><i>Don&apos;t have an account?</i>{" "}
                 <a className="text-blue-600 hover:underline hover:underline-offset-4" href="/register">Register Here</a>
             </div>

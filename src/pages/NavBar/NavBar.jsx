@@ -52,13 +52,11 @@ const NavBar = () => {
                 </div>
                 <div className="navbar-end flex gap-5">
 
-                    <div className="w-10 rounded-full">
-                        {user ? (
-                            <img alt="" src={user.photoURL || "https://i.ibb.co/8bP1kvZ/user-profile-icon-free-vector.jpg"} />
-                        ) : (
-                            <img alt="Default Profile" src="https://i.ibb.co/8bP1kvZ/user-profile-icon-free-vector.jpg" />
-                        )}
-                    </div>
+                {user && (
+                        <div className="w-10 rounded-full">
+                            <img alt="User Profile" src={user.photoURL || "https://i.ibb.co/8bP1kvZ/user-profile-icon-free-vector.jpg"} />
+                        </div>
+                    )}
                     {
                         user ?
                             <button onClick={handleSignOut} className="btn bg-[#23BE0A] text-white">Log Out</button>
