@@ -14,7 +14,7 @@ const NavBar = () => {
 
     <NavLink className={({isActive}) => isActive? 'text-lg font-semibold text-[#23BE0A] border px-1 rounded-md border-[#23BE0A]' : 'text-lg font-semibold'} to="/seller">Best Seller</NavLink>
     
-    <NavLink className={({isActive}) => isActive? 'text-lg font-semibold text-[#23BE0A] border px-1 rounded-md border-[#23BE0A] ' : 'text-lg font-semibold'} to="/about">Login</NavLink>
+    
 </>
 
     return (
@@ -41,7 +41,7 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end flex gap-5">
-                <Link >
+                <Link to="/login">
                 <a className="btn bg-[#23BE0A] text-white">Login</a>
                 </Link>
                
