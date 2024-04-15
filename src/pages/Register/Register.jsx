@@ -1,14 +1,36 @@
+import { useContext } from "react";
+import { AuthContext } from "../../providers/Context";
 
 
 const Register = () => {
+
+    const {createUser} = useContext(AuthContext)
 
     const handleRegister = e => {
         e.preventDefault();
 
         const form = new FormData(e.currentTarget);
+        const name = form.get('name');
+        const email = form.get('email');
+        const password = form.get('password');
+        const photoURL = form.get('photoURL');
         console.log(form.get('email'))
+        console.log(name, photoURL,email, password);
+
+
+         // Create user
+         createUser(email, password)
+         .then(result => {
+             console.log(result.user)
+         })
+         .catch(error => {
+             console.error(error)
+         })
+       
     }
 
+
+       
 
     return (
         <div className="max-w-7xl mx-auto">
@@ -27,7 +49,7 @@ const Register = () => {
 
                     <label htmlFor='terms' className="md:text-xl font-medium">I accept the Terms and Conditions</label>
                 </div>
-                <input className='btn w-10/12 md:text-lg text-base font-medium mt-5 mb-4 hover:bg-indigo-700 bg-indigo-600 text-white' type="submit" value="Create an Account" />
+                <input className='btn max-w-7xl md:text-lg text-base font-medium mt-5 mb-4 hover:bg-indigo-700 bg-indigo-600 text-white' type="submit" value="Create an Account" />
             </form>
 
             <div className="pb-8 font-semibold md:text-xl text-base text-slate-800 text-center"><i>Already have an account?</i>{" "}
