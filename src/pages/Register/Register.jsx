@@ -40,7 +40,8 @@ const Register = () => {
     const handleGoogleLogIn = () =>{
         signInWithGoogle()
         .then(result => {
-            console.log(result.user)
+            console.log(result.user);
+            navigate(location?.state ? location.state : '/' );
         })
         .catch(error => {
             console.error(error)
