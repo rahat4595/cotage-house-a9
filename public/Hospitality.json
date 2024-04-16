@@ -2,7 +2,7 @@
     {
       "id": 1,
       "estate_title": "Luxury Resort",
-      "segment_name": "Hospitality",
+      "segment_name": "Resort",
       "description": "Experience unparalleled luxury and comfort in our resort nestled in the heart of nature.",
       "price": "$500 per night",
       "status": "RENT",
@@ -14,7 +14,7 @@
     {
       "id": 2,
       "estate_title": "Boutique Hotel",
-      "segment_name": "Hospitality",
+      "segment_name": "Hotel",
       "description": "Indulge in a unique and intimate hotel experience with personalized service.",
       "price": "$300 per night",
       "status": "RENT",
@@ -26,7 +26,7 @@
     {
       "id": 3,
       "estate_title": "Mountain Lodge",
-      "segment_name": "Hospitality",
+      "segment_name": "Lodge",
       "description": "Escape to the tranquility of the mountains and enjoy cozy accommodations with breathtaking views.",
       "price": "$400 per night",
       "status": "RENT",
@@ -38,7 +38,7 @@
     {
       "id": 4,
       "estate_title": "Seaside Villa",
-      "segment_name": "Hospitality",
+      "segment_name": "Villa",
       "description": "Relax and unwind in a luxurious villa overlooking the azure waters of the ocean.",
       "price": "$600 per night",
       "status": "RENT",
@@ -50,7 +50,7 @@
     {
       "id": 5,
       "estate_title": "Historic Bed and Breakfast",
-      "segment_name": "Hospitality",
+      "segment_name": "Guesthouse",
       "description": "Own a piece of history with this charming bed and breakfast located in a historic district.",
       "price": "$1,200,000",
       "status": "SALE",
@@ -62,7 +62,7 @@
     {
       "id": 6,
       "estate_title": "Eco-Friendly Eco-Resort",
-      "segment_name": "Hospitality",
+      "segment_name": "Resort",
       "description": "Invest in sustainability with this eco-friendly resort offering luxury accommodations and eco-friendly amenities.",
       "price": "$3,500,000",
       "status": "SALE",

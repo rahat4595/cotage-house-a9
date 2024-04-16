@@ -1,6 +1,7 @@
 
 import { useLoaderData, useParams } from 'react-router-dom';
 import './card.css';
+import { Helmet } from 'react-helmet-async';
 
 const CardEstateDetails = () => {
     const details = useLoaderData();
@@ -11,6 +12,9 @@ const CardEstateDetails = () => {
      
     return (
         <div>
+            <Helmet>
+            <title>Details | Cotage House</title>
+            </Helmet>
             <div className="custom-bg-image flex  justify-center items-center   h-52">
 
                 <h1 className=' text-4xl lg:text-5xl text-white font-bold'>Property Details</h1>
@@ -37,6 +41,11 @@ const CardEstateDetails = () => {
                     </div>
                     
                 </div>
+            </div>
+
+            <div className=" flex  justify-center items-center">
+
+                <h1 className=' text-4xl lg:text-5xl text-black font-bold'>Estate Location</h1>
             </div>
         </div>
     );

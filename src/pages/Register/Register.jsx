@@ -5,6 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 import { toast } from 'react-toastify';
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -15,7 +16,7 @@ const Register = () => {
     const [registerError, setRegisterError] = useState('');
     const [registerSuccess, setRegisterSuccess] = useState('');
     const [showPassword, setShowPassword] = useState(false);
-    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+    
     
 
     const navigate = useNavigate();
@@ -36,7 +37,7 @@ const Register = () => {
         setRegisterSuccess();
 
         if (password.length < 6) {
-            setRegisterError('! Password should be 6 characters or long !');
+            setRegisterError('Password should contain atleast 6 characters');
             return;
         }
         else if (!/(?=.*[a-z])(?=.*[A-Z]).+/.test(password)) {
@@ -102,7 +103,9 @@ const Register = () => {
 
     return (
         <div className="max-w-7xl mx-auto">
-
+            <Helmet>
+            <title>Register | Cotage House</title>
+            </Helmet>
             <div className="md:pt-10 pt-8 pb-8 md:pb-10">
                 <img className="mx-auto md:w-[400px] w-[500px] rounded-3xl" alt="" />
             </div>
@@ -149,7 +152,7 @@ const Register = () => {
             </form>
 
             {
-                registerError && <b><p className='text-xl font-bold text-center pb-4 text-black-600'>{registerError}</p></b>
+                registerError && <b><p className='text-xl font-bold text-center pb-4 text-red-600'>{registerError}</p></b>
             }
 
             {
