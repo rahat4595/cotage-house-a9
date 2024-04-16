@@ -5,11 +5,11 @@
       "segment_name": "Hospitality",
       "description": "Experience unparalleled luxury and comfort in our resort nestled in the heart of nature.",
       "price": "$500 per night",
-      "status": "rent",
+      "status": "RENT",
       "area": "5000 sq ft",
-      "location": "Tropical Paradise",
+      "location": "California",
       "facilities": ["Infinity Pool", "Spa", "Fine Dining"],
-      "image": "resort.jpg"
+      "image": "https://i.ibb.co/QjbJQxH/image4.jpg"
     },
     {
       "id": 2,
@@ -17,11 +17,11 @@
       "segment_name": "Hospitality",
       "description": "Indulge in a unique and intimate hotel experience with personalized service.",
       "price": "$300 per night",
-      "status": "rent",
+      "status": "RENT",
       "area": "3000 sq ft",
       "location": "City Center",
       "facilities": ["Rooftop Bar", "Fitness Center", "Concierge"],
-      "image": "boutique_hotel.jpg"
+      "image": "https://i.ibb.co/QjbJQxH/image4.jpg"
     },
     {
       "id": 3,
@@ -29,11 +29,11 @@
       "segment_name": "Hospitality",
       "description": "Escape to the tranquility of the mountains and enjoy cozy accommodations with breathtaking views.",
       "price": "$400 per night",
-      "status": "rent",
+      "status": "RENT",
       "area": "4000 sq ft",
-      "location": "Alpine Retreat",
+      "location": "Aspen, Colorado",
       "facilities": ["Fireplace", "Hiking Trails", "Hot Tub"],
-      "image": "mountain_lodge.jpg"
+      "image": "https://i.ibb.co/QjbJQxH/image4.jpg"
     },
     {
       "id": 4,
@@ -41,11 +41,11 @@
       "segment_name": "Hospitality",
       "description": "Relax and unwind in a luxurious villa overlooking the azure waters of the ocean.",
       "price": "$600 per night",
-      "status": "rent",
+      "status": "RENT",
       "area": "6000 sq ft",
-      "location": "Coastal Haven",
+      "location": "South Portland",
       "facilities": ["Private Beach Access", "Jacuzzi", "Outdoor Dining"],
-      "image": "seaside_villa.jpg"
+      "image": "https://i.ibb.co/QjbJQxH/image4.jpg"
     },
     {
       "id": 5,
@@ -53,11 +53,11 @@
       "segment_name": "Hospitality",
       "description": "Own a piece of history with this charming bed and breakfast located in a historic district.",
       "price": "$1,200,000",
-      "status": "sale",
+      "status": "SALE",
       "area": "8000 sq ft",
-      "location": "Historic District",
+      "location": "Townshend, VT",
       "facilities": ["Victorian Architecture", "Garden Courtyard", "Antique Furnishings"],
-      "image": "bed_and_breakfast.jpg"
+      "image": "https://i.ibb.co/QjbJQxH/image4.jpg"
     },
     {
       "id": 6,
@@ -65,11 +65,11 @@
       "segment_name": "Hospitality",
       "description": "Invest in sustainability with this eco-friendly resort offering luxury accommodations and eco-friendly amenities.",
       "price": "$3,500,000",
-      "status": "sale",
-      "area": "10000 sq ft",
-      "location": "Nature Preserve",
+      "status": "SALE",
+      "area": "9000 sq ft",
+      "location": "Tahoe California",
       "facilities": ["Solar Power", "Organic Farm", "Nature Trails"],
-      "image": "eco_resort.jpg"
+      "image": "https://i.ibb.co/QjbJQxH/image4.jpg"
     }
   ]
   
