@@ -1,7 +1,8 @@
-
+import 'animate.css';
 import { useLoaderData, useParams } from 'react-router-dom';
 import './card.css';
 import { Helmet } from 'react-helmet-async';
+
 
 const CardEstateDetails = () => {
     const details = useLoaderData();
@@ -19,7 +20,7 @@ const CardEstateDetails = () => {
 
                 <h1 className=' text-4xl lg:text-5xl text-white font-bold'>Property Details</h1>
             </div>
-            <div className="hero my-20 bg-base-200">
+            <div className="hero my-20 bg-base-200 animate__animated animate__zoomIn">
                 <div className="hero-content flex-col lg:flex-row">
                     <img src={detail.image}className=" rounded-lg shadow-2xl" />
                     <div>

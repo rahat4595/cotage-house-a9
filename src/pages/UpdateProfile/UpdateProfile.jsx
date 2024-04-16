@@ -1,5 +1,5 @@
 import { useContext } from "react";
-
+import 'animate.css';
 import { AuthContext } from "../../providers/Context";
 import { Helmet } from "react-helmet-async";
 
@@ -28,7 +28,7 @@ const UpdateUser = () => {
 
   return (
 
-    <div className="flex justify-around shadow-2xl bg-stone-50 max-w-7xl mx-auto border-none p-4 m-auto rounded-2xl items-center mt-14 mb-16">
+    <div className="flex justify-around shadow-2xl bg-stone-50 max-w-7xl mx-auto border-none p-4 m-auto rounded-2xl items-center animate__animated animate__zoomIn mt-14 mb-16">
 
 <Helmet>
         <title>Update Profile | Cotage House</title>

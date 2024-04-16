@@ -50,25 +50,33 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end flex gap-5">
-
-                {user && (
-                        <div className="w-10 rounded-full">
-                            <img alt="User Profile" src={user.photoURL || "https://i.ibb.co/8bP1kvZ/user-profile-icon-free-vector.jpg"} />
+                    {user && (
+                        <div className="relative">
+                            <img
+                                alt="User Profile"
+                                src={
+                                    user.photoURL ||
+                                    "https://i.ibb.co/8bP1kvZ/user-profile-icon-free-vector.jpg"
+                                }
+                                title={user.displayName || "User"}
+                                className="w-10 h-10 rounded-full"
+                            />
+                            {user.displayName && (
+                                <span className="absolute bottom-0 left-0 transform -translate-x-1/2 bg-white text-black text-xs p-1 rounded shadow">
+                                    {user.displayName}
+                                </span>
+                            )}
                         </div>
                     )}
-                    {
-                        user ?
-                            <button onClick={handleSignOut} className="btn bg-[#23BE0A] text-white">Log Out</button>
-                            :
-
-                            <Link to="/login">
-                                <button className="btn bg-[#23BE0A] text-white">Login</button>
-                            </Link>
-
-
-                    }
-
-                    
+                    {user ? (
+                        <button onClick={handleSignOut} className="btn bg-[#23BE0A] text-white">
+                            Log Out
+                        </button>
+                    ) : (
+                        <Link to="/login">
+                            <button className="btn bg-[#23BE0A] text-white">Login</button>
+                        </Link>
+                    )}
                 </div>
             </div>
         </div>
