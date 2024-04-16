@@ -6,6 +6,7 @@ import Login from "../pages/Login/Login";
 import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import CardEstateDetails from "../pages/Home/CardEstate/CardEstateDetails";
 
 
 
@@ -19,6 +20,11 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element: <Home></Home>,
+                loader: () => fetch('/Hospitality.json')
+            },
+            {
+                path:'/estate-details/:id',
+                element: <PrivateRoute><CardEstateDetails></CardEstateDetails></PrivateRoute>,
                 loader: () => fetch('/Hospitality.json')
             },
             {

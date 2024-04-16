@@ -1,8 +1,9 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/Context";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import { toast } from 'react-toastify';
 
 
 const Login = () => {
@@ -12,6 +13,8 @@ const Login = () => {
 
     const [loginSuccess, setLoginSuccess] = useState('');
     const [loginError, setLoginError] = useState('');
+
+    const location = useLocation();
 
     const navigate = useNavigate()
 
@@ -30,7 +33,7 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 console.log(result.user)
-                setLoginSuccess('User logged in Successfully');
+                toast.success('Logged in Successfully!')
                 // Reset form field after login
                 e.target.reset();
 
@@ -48,6 +51,7 @@ const Login = () => {
         signInWithGoogle()
             .then(result => {
                 console.log(result.user);
+                toast.success('Logged in Successfully!')
                 // After Google login go to clicked state otherwish go to home page
                 navigate(location?.state ? location.state : '/');
             })
@@ -61,6 +65,7 @@ const Login = () => {
         githubLogin()
             .then(result => {
                 console.log(result.user);
+                toast.success('Logged in Successfully!')
                 //  Go to Home page after github Login
                 navigate(location?.state ? location.state : '/');
             })

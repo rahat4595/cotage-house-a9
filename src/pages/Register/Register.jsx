@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { IoEye, IoEyeOff } from "react-icons/io5";
+import { toast } from 'react-toastify';
+
 
 
 const Register = () => {
@@ -14,6 +16,7 @@ const Register = () => {
     const [registerSuccess, setRegisterSuccess] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+    
 
     const navigate = useNavigate();
 
@@ -50,7 +53,7 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
-                setRegisterSuccess('User Created Successfully');
+                toast.success('You have Registerd successfully');
                 updateUserProfile(name, photoURL)
                     .then(() => {
                         // Reset form field after Registration
@@ -72,6 +75,7 @@ const Register = () => {
         signInWithGoogle()
             .then(result => {
                 console.log(result.user);
+                toast.success('You have Registerd successfully');
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
@@ -84,6 +88,7 @@ const Register = () => {
         githubLogin()
             .then(result => {
                 console.log(result.user);
+                toast.success('You have Registerd successfully');
                 //  Go to Home page after github Login
                 navigate(location?.state ? location.state : '/');
             })
