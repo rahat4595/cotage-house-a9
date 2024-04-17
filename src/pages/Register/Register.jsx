@@ -108,7 +108,7 @@ const Register = () => {
     return (
         <div className="max-w-7xl mx-auto">
             <Helmet>
-            <title>Register</title>
+            <title>Register | Cotage House</title>
             </Helmet>
             <div className="md:pt-10 pt-8 pb-8 md:pb-10">
                 <img className="mx-auto md:w-[400px] w-[500px] rounded-3xl" alt="" />

@@ -14,7 +14,7 @@ const CardEstateDetails = () => {
     return (
         <div>
             <Helmet>
-            <title>Details</title>
+            <title>Details | Cotage House</title>
             </Helmet>
             <div className="custom-bg-image flex  justify-center items-center mt-10   h-52">
 

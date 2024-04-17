@@ -19,7 +19,7 @@ const AboutUs = () => {
     return (
         <div>
             <Helmet>
-                <title>About Us</title>
+                <title>About Us | Cotage House</title>
             </Helmet>
             <div className="max-w-7xl mx-auto flex  lg:gap-10 ">
                 <div className="animate__animated animate__fadeInLeft">

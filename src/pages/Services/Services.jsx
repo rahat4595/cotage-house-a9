@@ -25,7 +25,7 @@ const Services = () => {
     return (
         <div>
             <Helmet>
-                <title>Services</title>
+                <title>Services | Cotage House</title>
             </Helmet>
             <div className="max-w-7xl mx-auto text-center mt-10">
                 <h1 className="text-2xl md:text-4xl text-black font-bold">OUR CORE SERVICES</h1>

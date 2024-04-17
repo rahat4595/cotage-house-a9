@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <div>
             <Helmet>
-                <title>Home</title>
+                <title>Home | Cotage House</title>
             </Helmet>
 
             <div className="max-w-6xl mx-auto text-center animate__animated animate__zoomIn">
@@ -40,7 +40,7 @@ const Home = () => {
                 <h1 className="text-4xl md:text-6xl font-bold">OUR PROPERTIES</h1>
             </div>
 
-            <div className="max-w-7xl mx-auto rounded-xl p-5 gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" data-aos="fade-left">
+            <div className="max-w-7xl mx-auto rounded-xl p-5 gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" data-aos="zoom-in">
                 {estates.map(estate => (
                     <CardEstate
                         key={estate.id}

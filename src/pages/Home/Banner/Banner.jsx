@@ -17,7 +17,7 @@ const Banner = () => {
         speed={1200}
         loop={true}
         pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
+        
       >
         <SwiperSlide><img className='rounded-xl' src={slider1} alt="" style={{width: "100%", height: "80vh"}} /></SwiperSlide>
         <SwiperSlide><img className='rounded-xl' src={slider2} alt="" style={{width: "100%", height: "80vh"}} /></SwiperSlide>
