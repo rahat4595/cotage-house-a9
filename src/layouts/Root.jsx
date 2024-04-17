@@ -5,12 +5,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import Footer from "../pages/Footer/Footer";
 
 
+
 const Root = () => {
     return (
         <div>
             <NavBar></NavBar>
             <Outlet></Outlet>
             <Footer></Footer>
+           
             <ToastContainer 
             position="top-right"
             autoClose={3000}

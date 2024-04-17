@@ -44,10 +44,7 @@ const CardEstateDetails = () => {
                 </div>
             </div>
 
-            <div className=" flex  justify-center items-center">
-
-                <h1 className=' text-4xl lg:text-5xl text-black font-bold'>Estate Location</h1>
-            </div>
+            
         </div>
     );
 };

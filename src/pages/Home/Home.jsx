@@ -29,7 +29,7 @@ const Home = () => {
                 </h1>
             </div>
 
-            <div className="max-w-7xl mx-auto rounded-xl animate__animated animate__fadeInLeft">
+            <div className="max-w-7xl mx-auto rounded-xl p-2 shadow-xl animate__animated animate__fadeInLeft">
                 <Banner />
             </div>
 

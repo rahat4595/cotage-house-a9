@@ -19,9 +19,9 @@ const Banner = () => {
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
       >
-        <SwiperSlide><img src={slider1} alt="" style={{width: "100%", height: "80vh"}} /></SwiperSlide>
-        <SwiperSlide><img src={slider2} alt="" style={{width: "100%", height: "80vh"}} /></SwiperSlide>
-        <SwiperSlide><img src={slider3} alt="" style={{width: "100%", height: "80vh"}} /></SwiperSlide>
+        <SwiperSlide><img className='rounded-xl' src={slider1} alt="" style={{width: "100%", height: "80vh"}} /></SwiperSlide>
+        <SwiperSlide><img className='rounded-xl' src={slider2} alt="" style={{width: "100%", height: "80vh"}} /></SwiperSlide>
+        <SwiperSlide><img className='rounded-xl' src={slider3} alt="" style={{width: "100%", height: "80vh"}} /></SwiperSlide>
       </Swiper>
     );
 };

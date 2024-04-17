@@ -17,7 +17,7 @@ const CardEstate = ({ estate }) => {
                     <h2 className="card-title text-2xl">{estate_title}</h2>
                     <div className="flex my-3">
                         <p className="text-xl flex gap-1"><CiLocationOn className="mt-1" />{location}</p>
-                        <p className="px-4 rounded-xl text-white text-xl bg-green-500 text-center">{status}</p>
+                        <p className="px-4 rounded-xl text-white text-xl bg-[#23BE0A] text-center">{status}</p>
                     </div>
                     <div className="flex my-3">
                         <p className="text-xl flex gap-1"><BsHouseDoor className="mt-1" />{segment_name}</p>
@@ -25,7 +25,7 @@ const CardEstate = ({ estate }) => {
                     </div>
                     <div className="card-actions justify-start">
                         <Link to={`/estate-details/${id}`}>
-                            <button className="btn duration-300 hover:scale-90 btn-primary">View Details</button>
+                        <button  className="rounded-lg py-2 px-6 text-center text-xl bg-[#23BE0A] text-white mt-10 duration-300 hover:scale-90">View Property</button>
                         </Link>
                     </div>
                 </div>

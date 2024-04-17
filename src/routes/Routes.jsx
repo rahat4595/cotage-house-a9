@@ -7,6 +7,8 @@ import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import CardEstateDetails from "../pages/Home/CardEstate/CardEstateDetails";
+import Services from "../pages/Services/Services";
+import AboutUs from "../pages/AboutUs/AboutUs";
 
 
 
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
             {
                 path: '/update',
                 element: <PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>
+            },
+            {
+                path: '/services',
+                element: <PrivateRoute><Services></Services></PrivateRoute>
+            },
+            {
+                path: '/abouts',
+                element: <AboutUs></AboutUs>
             }
            
         ]
