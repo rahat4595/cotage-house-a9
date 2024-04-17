@@ -10,9 +10,9 @@ import { useEffect } from "react";
 const Home = () => {
     const estates = useLoaderData()
 
-    useEffect(() =>{
-        Aos.init({duration: 2000})
-    },[])
+    useEffect(() => {
+        Aos.init({ duration: 2000 })
+    }, [])
 
     return (
         <div>
@@ -22,11 +22,13 @@ const Home = () => {
 
             <div className="max-w-6xl mx-auto text-center animate__animated animate__zoomIn">
                 <h1 className="textmd md:text-xl font-bold p-10">
-                    Indulge in luxury and comfort at our curated estates,
-                    Where every stay is a memorable escape.
-                    Discover breathtaking views and exceptional service,
-                    Your ultimate retreat begins here.
+                    Welcome to your sanctuary of luxury and tranquility. Step into a world where elegance meets comfort, and every corner tells a story of refined living
                 </h1>
+            </div>
+
+            <div className="max-w-7xl mx-auto text-center my-5 animate__animated animate__zoomIn" >
+               
+                <h1 className="text-4xl md:text-6xl font-bold">TAKE A LOOK</h1>
             </div>
 
             <div className="max-w-7xl mx-auto rounded-xl p-2 shadow-xl animate__animated animate__fadeInLeft">

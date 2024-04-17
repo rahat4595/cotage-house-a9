@@ -62,7 +62,7 @@ const UpdateUser = () => {
       >
         <h1 className="text-2xl font-bold">Update Your profile</h1>
         <input
-          className="text-lg border-neutral-300 border font-medium outline-pink-500 w-full md:w-3/4 mt-6 px-4 mb-6 py-2 rounded placeholder-pink-600"
+          className="text-lg border-neutral-300 border font-medium outline-black-500 w-full md:w-3/4 mt-6 px-4 mb-6 py-2 rounded placeholder-black-600"
           type="text"
           name="name"
           placeholder="Your Name"
@@ -70,7 +70,7 @@ const UpdateUser = () => {
         />
 
         <input
-          className="text-lg border-neutral-300 border font-medium outline-pink-500 w-full md:w-3/4 px-4 mb-6 py-2 rounded placeholder-pink-600"
+          className="text-lg border-neutral-300 border font-medium outline-black-500 w-full md:w-3/4 px-4 mb-6 py-2 rounded placeholder-black-600"
           type="text"
           name="photoURL"
           placeholder="Photo URL"
@@ -78,7 +78,7 @@ const UpdateUser = () => {
         />
 
         <input
-          className="text-lg border-neutral-300 border font-medium outline-pink-500 w-full md:w-3/4 px-4 mb-3 py-2 rounded placeholder-pink-600"
+          className="text-lg border-neutral-300 border font-medium outline-black-500 w-full md:w-3/4 px-4 mb-3 py-2 rounded placeholder-black-600"
           type="email"
           name="email"
           placeholder="Your Email Address"

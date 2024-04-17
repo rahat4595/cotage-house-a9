@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { CiLocationOn } from "react-icons/ci";
 import { BsHouseDoor } from "react-icons/bs";
 import { BsArrowUpRightSquare } from "react-icons/bs";
@@ -7,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const CardEstate = ({ estate }) => {
 
-    
+
     const { id, estate_title, segment_name, description, price, status, area, location, facilities, image } = estate
 
     return (
@@ -27,7 +28,7 @@ const CardEstate = ({ estate }) => {
                     </div>
                     <div className="card-actions justify-start">
                         <Link to={`/estate-details/${id}`}>
-                        <button  className="rounded-lg py-2 px-6 text-center text-xl bg-[#23BE0A]  text-white mt-10 duration-300 hover:scale-90">View Property</button>
+                            <button className="rounded-lg py-2 px-6 text-center text-xl bg-[#23BE0A]  text-white mt-10 duration-300 hover:scale-90">View Property</button>
                         </Link>
                     </div>
                 </div>
@@ -35,6 +36,22 @@ const CardEstate = ({ estate }) => {
 
         </div>
     );
+};
+
+
+CardEstate.propTypes = {
+    estate: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        estate_title: PropTypes.string.isRequired,
+        segment_name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        status: PropTypes.string.isRequired,
+        area: PropTypes.string.isRequired,
+        location: PropTypes.string.isRequired,
+        facilities: PropTypes.arrayOf(PropTypes.string).isRequired,
+        image: PropTypes.string.isRequired,
+    }).isRequired,
 };
 
 export default CardEstate;
