@@ -14,14 +14,14 @@ const CardEstateDetails = () => {
     return (
         <div>
             <Helmet>
-            <title>Details | Cotage House</title>
+            <title>Details</title>
             </Helmet>
-            <div className="custom-bg-image flex  justify-center items-center   h-52">
+            <div className="custom-bg-image flex  justify-center items-center mt-10   h-52">
 
                 <h1 className=' text-4xl lg:text-5xl text-white font-bold'>Property Details</h1>
             </div>
-            <div className="hero my-20 bg-base-200 animate__animated animate__zoomIn">
-                <div className="hero-content flex-col lg:flex-row">
+            <div className="hero my-20  animate__animated animate__zoomIn">
+                <div className="hero-content flex-col gap-10 md:gap-28 lg:flex-row">
                     <img src={detail.image}className=" rounded-lg shadow-2xl" />
                     <div>
                         <h1 className="text-5xl font-bold">{detail.estate_title}</h1>

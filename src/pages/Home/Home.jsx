@@ -17,11 +17,11 @@ const Home = () => {
     return (
         <div>
             <Helmet>
-                <title>Home | Cottage House</title>
+                <title>Home</title>
             </Helmet>
 
             <div className="max-w-6xl mx-auto text-center animate__animated animate__zoomIn">
-                <h1 className="text-xl font-bold p-10">
+                <h1 className="textmd md:text-xl font-bold p-10">
                     Indulge in luxury and comfort at our curated estates,
                     Where every stay is a memorable escape.
                     Discover breathtaking views and exceptional service,
@@ -35,7 +35,7 @@ const Home = () => {
 
             <div className="max-w-7xl mx-auto text-center mt-10">
                 <p className="text-[#5ba600] text-md">we are offering the best real estate</p>
-                <h1 className="text-6xl font-bold">Our Properties</h1>
+                <h1 className="text-4xl md:text-6xl font-bold">OUR PROPERTIES</h1>
             </div>
 
             <div className="max-w-7xl mx-auto rounded-xl p-5 gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" data-aos="fade-left">

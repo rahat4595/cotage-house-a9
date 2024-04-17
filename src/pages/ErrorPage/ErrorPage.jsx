@@ -6,7 +6,7 @@ const ErrorPage = () => {
     return (
         <div>
             <Helmet>
-            <title>Error | Cotage House</title>
+            <title>Error</title>
             </Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content text-center">

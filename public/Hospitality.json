@@ -9,7 +9,7 @@
       "area": "5000 sq ft",
       "location": "California",
       "facilities": ["Infinity Pool", "Spa", "Fine Dining"],
-      "image": "https://i.ibb.co/QjbJQxH/image4.jpg"
+      "image": "https://i.ibb.co/tcxYBBb/pexels-boonkong-boonpeng-1134176.jpg"
     },
     {
       "id": 2,
@@ -21,7 +21,7 @@
       "area": "3000 sq ft",
       "location": "City Center",
       "facilities": ["Rooftop Bar", "Fitness Center", "Concierge"],
-      "image": "https://i.ibb.co/QjbJQxH/image4.jpg"
+      "image": "https://i.ibb.co/kJb5CBx/pexels-pixabay-161758.jpg"
     },
     {
       "id": 3,
@@ -33,7 +33,7 @@
       "area": "4000 sq ft",
       "location": "Aspen, Colorado",
       "facilities": ["Fireplace", "Hiking Trails", "Hot Tub"],
-      "image": "https://i.ibb.co/QjbJQxH/image4.jpg"
+      "image": "https://i.ibb.co/SfqpHQV/pexels-leeloo-the-first-5619177.jpg"
     },
     {
       "id": 4,
@@ -45,7 +45,7 @@
       "area": "6000 sq ft",
       "location": "South Portland",
       "facilities": ["Private Beach Access", "Jacuzzi", "Outdoor Dining"],
-      "image": "https://i.ibb.co/QjbJQxH/image4.jpg"
+      "image": "https://i.ibb.co/WkdVcDB/pexels-pixabay-53610.jpg"
     },
     {
       "id": 5,
@@ -69,7 +69,7 @@
       "area": "9000 sq ft",
       "location": "Tahoe California",
       "facilities": ["Solar Power", "Organic Farm", "Nature Trails"],
-      "image": "https://i.ibb.co/QjbJQxH/image4.jpg"
+      "image": "https://i.ibb.co/4Fcb6Kg/pexels-asad-photo-maldives-1450360.jpg"
     }
   ]
   

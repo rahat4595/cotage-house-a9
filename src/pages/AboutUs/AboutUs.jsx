@@ -10,6 +10,7 @@ import 'animate.css';
 import Aos from "aos";
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 const AboutUs = () => {
 
     useEffect(() =>{
@@ -17,6 +18,9 @@ const AboutUs = () => {
     },[])
     return (
         <div>
+            <Helmet>
+                <title>About Us</title>
+            </Helmet>
             <div className="max-w-7xl mx-auto flex  lg:gap-10 ">
                 <div className="animate__animated animate__fadeInLeft">
                     <img className="hidden lg:block " src="https://i.ibb.co/M2kJ0yf/13.png" alt="" />
@@ -56,7 +60,7 @@ const AboutUs = () => {
             </div>
 
             <div className="max-w-7xl mx-auto text-center mt-10">
-                <h1 className="text-4xl text-black font-bold">Property Agents</h1>
+                <h1 className="text-4xl text-black font-bold">PROPERTY AGENTS</h1>
             </div>
 
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 my-10 p-5  lg:grid-cols-3 gap-5 " data-aos="zoom-in">

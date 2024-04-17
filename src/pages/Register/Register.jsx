@@ -57,16 +57,20 @@ const Register = () => {
                 toast.success('You have Registerd successfully');
                 updateUserProfile(name, photoURL)
                     .then(() => {
-                        // Reset form field after Registration
+                        // Reseting the from field
                         e.target.reset();
-                        // Go to home page after Registration
+                        // Go to home page 
                         navigate('/');
                     })
             })
             .catch(error => {
                 console.error(error);
-                setRegisterError(error.message);
-            })
+                if (error.code === 'auth/email-already-in-use') {
+                    setRegisterError('The email address is already in use. Please use a different email.');
+                } else {
+                    setRegisterError(error.message);
+                }
+            });
 
     }
 
@@ -104,7 +108,7 @@ const Register = () => {
     return (
         <div className="max-w-7xl mx-auto">
             <Helmet>
-            <title>Register | Cotage House</title>
+            <title>Register</title>
             </Helmet>
             <div className="md:pt-10 pt-8 pb-8 md:pb-10">
                 <img className="mx-auto md:w-[400px] w-[500px] rounded-3xl" alt="" />
@@ -134,9 +138,9 @@ const Register = () => {
                 <input className="text-lg border-neutral-300 border font-medium outline-black-500 md:w-3/4 px-4 mb-6 py-2 rounded placeholder-black-600" type="text" name="photoURL" placeholder="Photo URL" />
 
                 <div className='relative mb-6 md:w-3/4 mx-auto'>
-                    <input className="text-lg border-neutral-300 border  font-medium outline-black-500 w-full px-4 py-2 rounded placeholder-black-500" type={showPassword ? "text" : "password"} name="password" placeholder="Password" required />
+                    <input className="text-lg border-neutral-300 border  font-medium outline-black-500  lg:w-full px-4 py-2 rounded placeholder-black-500" type={showPassword ? "text" : "password"} name="password" placeholder="Password" required />
 
-                    <span className='absolute top-3 right-10' onClick={() => setShowPassword(!showPassword)}>
+                    <span className='absolute top-3 right-16 lg:right-10' onClick={() => setShowPassword(!showPassword)}>
                         {
                             showPassword ? <IoEyeOff className='text-2xl'></IoEyeOff > : <IoEye className='text-2xl'></IoEye>
                         }

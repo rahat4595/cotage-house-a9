@@ -4,12 +4,14 @@ import { BsArrowUpRightSquare } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 
+
 const CardEstate = ({ estate }) => {
 
+    
     const { id, estate_title, segment_name, description, price, status, area, location, facilities, image } = estate
 
     return (
-        <div className="mt-10  ">
+        <div className="my-10  ">
 
             <div className="card w-full bg-base-100 shadow-xl">
                 <figure><img className="duration-300 hover:scale-110 " src={image} alt="Estate" /></figure>
@@ -25,7 +27,7 @@ const CardEstate = ({ estate }) => {
                     </div>
                     <div className="card-actions justify-start">
                         <Link to={`/estate-details/${id}`}>
-                        <button  className="rounded-lg py-2 px-6 text-center text-xl bg-[#23BE0A] text-white mt-10 duration-300 hover:scale-90">View Property</button>
+                        <button  className="rounded-lg py-2 px-6 text-center text-xl bg-[#23BE0A]  text-white mt-10 duration-300 hover:scale-90">View Property</button>
                         </Link>
                     </div>
                 </div>

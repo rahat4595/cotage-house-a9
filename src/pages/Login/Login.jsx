@@ -43,11 +43,12 @@ const Login = () => {
             })
             .catch(error => {
                 console.error(error);
-                setLoginError('Please check your Email or Password again :(')
+                setLoginError('Please check your Email or Password again')
             })
 
     }
 
+    
     const handleGoogleLogin = () => {
         signInWithGoogle()
             .then(result => {
@@ -79,7 +80,7 @@ const Login = () => {
     return (
         <section className="flex flex-col md:flex-row justify-center md:space-x-24 items-center my-2 mx-5  md:mx-0 md:my-14">
             <Helmet>
-                <title>Login | Cozy Cottage</title>
+                <title>Login</title>
             </Helmet>
             <div className="lg:w-1/3 md:w-80 hidden md:block lg:block w-72 max-w-sm text-center md:mt-9">
                 <img src="https://i.ibb.co/44WLfYh/mobile-login-concept-illustration-114360-83.jpg" alt="" />

@@ -1,6 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PiHouseLine } from "react-icons/pi";
-
+import { RiCustomerService2Line } from "react-icons/ri";
+import { SiAmazonsimpleemailservice } from "react-icons/si";
+import { TbHomeMinus } from "react-icons/tb";
+import { TbHomeHand } from "react-icons/tb";
+import { GrDocumentText } from "react-icons/gr";
+import 'animate.css';
+import Aos from "aos";
+import 'aos/dist/aos.css'
 import "./Services.css"; // Import CSS file for styling
 import { Helmet } from "react-helmet-async";
 
@@ -12,16 +19,19 @@ const Services = () => {
     const [isHovered5, setIsHovered5] = useState(false);
     const [isHovered6, setIsHovered6] = useState(false);
 
+    useEffect(() => {
+        Aos.init({ duration: 2000 })
+    }, [])
     return (
         <div>
             <Helmet>
-            <title>Services | Cottage House</title>
+                <title>Services</title>
             </Helmet>
             <div className="max-w-7xl mx-auto text-center mt-10">
-                <h1 className="text-4xl text-black font-bold">OUR CORE SERVICES</h1>
+                <h1 className="text-2xl md:text-4xl text-black font-bold">OUR CORE SERVICES</h1>
             </div>
 
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 p-5 lg:grid-cols-3 gap-5 my-20">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 p-5 lg:grid-cols-3 gap-5 my-20 animate__animated animate__fadeInUp">
 
                 <div
                     className={`card w-full bg-base-100 shadow-xl ${isHovered1 ? "hovered" : ""}`}
@@ -43,11 +53,12 @@ const Services = () => {
                     onMouseLeave={() => setIsHovered2(false)}
                 >
                     <div className="flex justify-center p-5 items-center">
-                        <PiHouseLine className="text-6xl text-[#ff5a3c]" />
+                        <SiAmazonsimpleemailservice className="text-6xl text-[#ff5a3c]" />
                     </div>
                     <div className="card-body text-center">
                         <a href="#"><h2 className="text-3xl font-bold text-center hover:text-[#ff5a3c]">Mortgage Service</h2></a>
-                        <p className="p-5">Over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.</p>
+                        <p className="p-5">Explore personalized mortgage solutions tailored to your needs.
+                            Unlock your dream home with our expert mortgage services.</p>
                     </div>
                     <div className="hover-line"></div> {/* Orange line on hover */}
                 </div>
@@ -57,11 +68,11 @@ const Services = () => {
                     onMouseLeave={() => setIsHovered3(false)}
                 >
                     <div className="flex justify-center p-5  items-center">
-                        <PiHouseLine className="text-6xl text-[#ff5a3c]" />
+                        <RiCustomerService2Line className="text-6xl text-[#ff5a3c]" />
                     </div>
                     <div className="card-body text-center">
                         <a href="#"><h2 className="text-3xl font-bold text-center hover:text-[#ff5a3c]">Consulting Service</h2></a>
-                        <p className="p-5">Over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.</p>
+                        <p className="p-5">Elevate your business with expert consulting services tailored to your needs. Unlock growth potential and achieve success.</p>
                     </div>
                     <div className="hover-line"></div> {/* Orange line on hover */}
                 </div>
@@ -71,11 +82,11 @@ const Services = () => {
                     onMouseLeave={() => setIsHovered4(false)}
                 >
                     <div className="flex justify-center p-5 items-center">
-                        <PiHouseLine className="text-6xl text-[#ff5a3c]" />
+                        <TbHomeHand className="text-6xl text-[#ff5a3c]" />
                     </div>
                     <div className="card-body text-center">
                         <a href="#"><h2 className="text-3xl font-bold text-center hover:text-[#ff5a3c]">Home Buying</h2></a>
-                        <p className="p-5">Over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.</p>
+                        <p className="p-5">Find your dream home with ease. Our expert team simplifies the home buying process for a seamless experience</p>
                     </div>
                     <div className="hover-line"></div> {/* Orange line on hover */}
                 </div>
@@ -85,11 +96,11 @@ const Services = () => {
                     onMouseLeave={() => setIsHovered5(false)}
                 >
                     <div className="flex justify-center p-5 items-center">
-                        <PiHouseLine className="text-6xl text-[#ff5a3c]" />
+                        <TbHomeMinus className="text-6xl text-[#ff5a3c]" />
                     </div>
                     <div className="card-body text-center">
                         <a href="#"><h2 className="text-3xl font-bold text-center hover:text-[#ff5a3c]">Home Selling</h2></a>
-                        <p className="p-5">Over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.</p>
+                        <p className="p-5">Maximize the value of your home sale with our expert guidance and personalized support.Achive your real estate goals effortlessly</p>
                     </div>
                     <div className="hover-line"></div> {/* Orange line on hover */}
                 </div>
@@ -99,70 +110,70 @@ const Services = () => {
                     onMouseLeave={() => setIsHovered6(false)}
                 >
                     <div className="flex justify-center p-5 items-center">
-                        <PiHouseLine className="text-6xl text-[#ff5a3c]" />
+                        <GrDocumentText className="text-6xl text-[#ff5a3c]" />
                     </div>
                     <div className="card-body text-center">
                         <a href="#"><h2 className="text-3xl font-bold text-center hover:text-[#ff5a3c]">Escrow Services</h2></a>
-                        <p className="p-5">Over 1 million+ homes for sale available on the website, we can match you with a house you will want to call home.</p>
+                        <p className="p-5">Safeguard your transactions with our reliable escrow services. Enjoy peace of mind knowing your funds are securely held until all conditions are met.</p>
                     </div>
                     <div className="hover-line"></div> {/* Orange line on hover */}
                 </div>
             </div>
 
             <div className="max-w-7xl mx-auto text-center mt-10">
-                <h1 className="text-4xl text-black font-bold">PROFESSIONAL  SERVICES</h1>
+                <h1 className="text-2xl md:text-4xl text-black font-bold">PROFESSIONAL  SERVICES</h1>
             </div>
 
-            <div className="max-w-7xl grid grid-cols-1 md:grid-cols-2 p-5 lg:grid-cols-4 gap-5  my-10 mx-auto">
+            <div className="max-w-7xl grid grid-cols-1 md:grid-cols-2 p-5 lg:grid-cols-4 gap-5  my-10 mx-auto" data-aos="fade-left">
                 <div className="card w-full bg-base-100 shadow-xl hover:shadow-md">
-                <figure><img src="https://i.ibb.co/b7QtgPH/service-4.jpg" alt="Shoes" /></figure>
+                    <figure><img src="https://i.ibb.co/b7QtgPH/service-4.jpg" alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">
                             Room Service
-                         
+
                         </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, rerum?</p>
+                        <p>Indulge in convenience and comfort with our impeccable room service.</p>
                         <div className="card-actions justify-start">
-                        <h1 className="text-[#23BE0A] hover:text-blue-500 hover:cursor-pointer">Read More...</h1>
+                            <h1 className="text-[#23BE0A] hover:text-blue-500 hover:cursor-pointer">Read More...</h1>
                         </div>
                     </div>
                 </div>
                 <div className="card w-full bg-base-100 shadow-xl hover:shadow-md">
-                <figure><img src="https://i.ibb.co/v1mcQGG/service-3.jpg" alt="Shoes" /></figure>
+                    <figure><img src="https://i.ibb.co/v1mcQGG/service-3.jpg" alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">
-                           Bank Loan
-                         
+                            Bank Loan
+
                         </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, rerum?</p>
+                        <p>Secure the funding you need with our flexible bank loan options.</p>
                         <div className="card-actions justify-start">
-                        <h1 className="text-[#23BE0A] hover:text-blue-500 hover:cursor-pointer">Read More...</h1>
+                            <h1 className="text-[#23BE0A] hover:text-blue-500 hover:cursor-pointer">Read More...</h1>
                         </div>
                     </div>
                 </div>
                 <div className="card w-full bg-base-100 shadow-xl hover:shadow-md">
-                <figure><img src="https://i.ibb.co/NT8HHsC/service-2.jpg" alt="Shoes" /></figure>
+                    <figure><img src="https://i.ibb.co/NT8HHsC/service-2.jpg" alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">
                             Security
-                         
+
                         </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, rerum?</p>
+                        <p>Protecting what matters most with robust security solutions.</p>
                         <div className="card-actions justify-start">
-                        <h1 className="text-[#23BE0A] hover:text-blue-500 hover:cursor-pointer">Read More...</h1>
+                            <h1 className="text-[#23BE0A] hover:text-blue-500 hover:cursor-pointer">Read More...</h1>
                         </div>
                     </div>
                 </div>
                 <div className="card w-full bg-base-100 shadow-xl hover:shadow-md" >
-                <figure><img src="https://i.ibb.co/hBYQMQG/service.jpghttps://i.ibb.co/b7QtgPH/service-4.jpg" alt="Shoes" /></figure>
+                    <figure><img src="https://i.ibb.co/hBYQMQG/service.jpghttps://i.ibb.co/b7QtgPH/service-4.jpg" alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">
                             Support 24/7
-                         
+
                         </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, rerum?</p>
+                        <p>Get assistance anytime, anywhere with our 24/7 support.</p>
                         <div className="card-actions justify-start">
-                           <h1 className="text-[#23BE0A] hover:text-blue-500 hover:cursor-pointer">Read More...</h1>
+                            <h1 className="text-[#23BE0A] hover:text-blue-500 hover:cursor-pointer">Read More...</h1>
                         </div>
                     </div>
                 </div>
